@@ -1,0 +1,26 @@
+/*设置登录和注册界面的背景颜色*/
+#LoginDialog, #RegisterDialog
+{
+    background-color: rgb(255, 255, 255);
+}
+
+/*设置登录和注册界面的用户标签和密码标签的字体颜色*/
+#user_label, #password_label
+{
+    color: black;
+}
+
+/*
+修改错误提示信息的字体颜色
+属性选择器，当state='error'时,为红色
+          当state='normal',为绿色色
+*/
+#error_tip_label[state='error']
+{
+    color: red;
+}
+
+#error_tip_label[state='normal']
+{
+    color: green;
+}
