@@ -6,6 +6,9 @@
 #include <QRegularExpression>
 
 #include <functional>
+#include <memory.h>
+#include <mutex>
+#include <iostream>
 
 /**
  * @brief repolish 用来刷新qss
@@ -19,4 +22,30 @@
  */
 extern std::function<void(QWidget*)> repolish;
 
+/**
+ * 发送不同功能的http请求id
+ */
+enum ReqId
+{
+    ID_GET_VARIFY_CODE = 1001,  // 获取验证码
+    ID_REGISTER_USER,           // 注册用户
+};
+
+/**
+ * 功能模块
+ */
+enum Modules
+{
+    REGISTER_MOD = 0,
+};
+
+/**
+ * 错误码
+ */
+enum ErrorCodes
+{
+    SUCCESS = 0,
+    ERR_JSON,       // json解析错误
+    ERR_NETWORK,    // 网络错误
+};
 #endif // GLOBAL_H
